@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="initial-scale=1" />
+<title>devicemotion</title>
+<style>
+</style>
+</head>
+<body>
+
+<h1>devicemotion</h1>
+<section>
+	<h2>加速度（重力加味）</h2>
+	<dl>
+		<dt>event.accelerationIncludingGravity.x</dt>
+		<dd id="gx">-<dd>
+		<dt>event.accelerationIncludingGravity.y</dt>
+		<dd id="gy">-<dd>
+		<dt>event.accelerationIncludingGravity.z</dt>
+		<dd id="gz">-<dd>
+	</dl>
+</section>
+<section>
+	<h2>加速度（重力相殺）</h2>
+	<dl>
+		<dt>event.acceleration.x</dt>
+		<dd id="x">-<dd>
+		<dt>event.acceleration.y</dt>
+		<dd id="y">-<dd>
+		<dt>event.acceleration.z</dt>
+		<dd id="z">-<dd>
+	</dl>
+</section>
+<section>
+	<h2>回転速度</h2>
+	<dl>
+		<dt>event.rotationRate.alpha</dt>
+		<dd id="alpha">-<dd>
+		<dt>event.rotationRate.beta</dt>
+		<dd id="beta">-<dd>
+		<dt>event.rotationRate.gamma</dt>
+		<dd id="gamma">-<dd>
+	</dl>
+</section>
+<section>
+	<h2>その他</h2>
+	<dl>
+		<dt>event.interval</dt>
+		<dd id="interval">-<dd>
+	</dl>
+</section>
+
+<script>
+(function () {
+
+window.addEventListener('devicemotion', function(event) {
+	if( event.acceleration ) {
+		document.getElementById('x').textContent = event.acceleration.x;
+		document.getElementById('y').textContent = event.acceleration.y;
+		document.getElementById('z').textContent = event.acceleration.z;
+	}
+	if( event.accelerationIncludingGravity ) {
+		document.getElementById('gx').textContent = event.accelerationIncludingGravity.x;
+		document.getElementById('gy').textContent = event.accelerationIncludingGravity.y;
+		document.getElementById('gz').textContent = event.accelerationIncludingGravity.z;
+	}
+	if( event.rotationRate ) {
+		document.getElementById('alpha').textContent = event.rotationRate.alpha;
+		document.getElementById('beta').textContent = event.rotationRate.beta;
+		document.getElementById('gamma').textContent = event.rotationRate.gamma;
+	}
+	if( event.interval ) {
+		document.getElementById('interval').textContent = event.interval;
+	}
+}, true);
+
+})();
+</script>
+
+</body>
+</html>

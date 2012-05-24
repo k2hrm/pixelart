@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ドット絵</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="js/dote.js"></script>
+<link href="css/dote.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<form name="f1">
+背景色
+<select name="color">
+<option value="black" selected>black</option>
+<option value="red">red</option>
+<option value="blue">blue</option>
+<option value="orange">orange</option>
+<option value="brown">brown</option>
+</select>
+描画色
+<select name="paintcolor">
+<option value="black" selected>black</option>
+<option value="red">red</option>
+<option value="blue">blue</option>
+<option value="orange">orange</option>
+<option value="brown">brown</option>
+</select>
+</form>
+<input type="button" value="保存！" onClick="javascript:dSave()">
+<input type="button" value="保存データを呼び出し！" onClick="javascript:dLoad()">
+<div id="grid"></div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26963811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,34 @@
+div#grid	{
+	border-top:#ccc 1px solid;
+	border-right:#ccc 1px solid;
+    width: 264px;
+    height: 264px;
+    
+}
+
+div#grid div	{
+	width:10px;
+	height:10px;
+	border-left:#ccc 1px solid;
+	border-bottom:#ccc 1px solid;
+	float:left;
+	}
+div.on	{
+    background-color:#ccc;
+}
+
+div.on.red	{
+    background-color:red;
+}
+div.on.black	{
+    background-color:black;
+}
+div.on.blue	{
+    background-color:blue;
+}
+div.on.orange	{
+    background-color:orange;
+}
+div.on.brown	{
+    background-color:brown;
+}

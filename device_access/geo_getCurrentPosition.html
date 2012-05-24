@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja"> 
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="initial-scale=1" />
+<title>getCurrentPosition() - Geolocation API</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+<style>
+dl {
+	width: 600px;
+}
+dt {
+	display: inline-block;
+	float: left;
+	width: 120px;
+	margin: 0;
+	padding: 0;
+	height: 1.3em;
+}
+dd {
+	display: inline-block;
+	float: left;
+	width: 400px;
+	margin: 0;
+	padding: 0;
+	height: 1.3em;
+}
+</style>
+<script>
+(function () {
+
+document.addEventListener("DOMContentLoaded", function() {
+	// 現在位置情報を取得
+	window.navigator.geolocation.getCurrentPosition(show_location);
+}, false);
+
+// 位置情報取得完了時の処理
+function show_location(event) {
+	// 緯度
+	var latitude = event.coords.latitude;
+	document.querySelector('#latitude').textContent = latitude;
+	// 経度
+	var longitude = event.coords.longitude;
+	document.querySelector('#longitude').textContent = longitude;
+}
+
+})();
+</script>
+</head>
+<body>
+
+<dl>
+	<dt>緯度</dt>
+	<dd id="latitude">-</dd>
+	<dt>経度</dt>
+	<dd id="longitude">-</dd>
+</dl>
+
+</body>
+</html>
